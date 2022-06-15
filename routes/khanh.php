@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/1', function () {
-    return "Khánh";
-});
+Route::get('/login',[LoginController::class, 'login_user']);
+Route::get('/dang-nhap',[LoginController::class, 'login_user']);
+Route::get('/dang-ky',[LoginController::class, 'signUp']);
+Route::post('/login-customer',[LoginController::class, 'login_customer']);
+Route::post('/add-customer',[LoginController::class, 'add_customer']);
